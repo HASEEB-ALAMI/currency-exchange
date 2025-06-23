@@ -11,6 +11,7 @@ body{
 .video{
     display: flex;
     width: 40%;
+    height: 50vh;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
     background-color: #fff;
@@ -47,11 +48,11 @@ body{
     color: rgba(192, 15, 15, 0.945);
 }
 h1{
-    background-color: #1764c9;
+    background-color: #fff;
     width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 0;
-    color: #fff;
+    color: #1764c9;
 }
