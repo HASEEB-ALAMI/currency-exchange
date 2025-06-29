@@ -7,7 +7,6 @@ function playAndStop(){
     if(video.paused){
         video.play();
         play.firstElementChild.className = "fa fa-pause";
-        setInterval(rangeGoing, 100);
     }else{
         video.pause();
         play.firstElementChild.className = "fa fa-play";
@@ -21,16 +20,25 @@ function stopAndBegin(){
     play.firstElementChild.className = "fa fa-play";
 
 }
-function rangeGoing(){
-    range.value = video.currentTime;
-    if(range.value < 10){
-        time.innerText = "0" + Math.floor(range.value);
-    }else{
-        time.innerText = Math.floor(range.value);
+
+function goRange(){
+    range.value = (video.currentTime / video.duration) * 100;
+    let min = Math.floor(video.currentTime/60);
+    if(min < 10){
+        min = '0' + min;
     }
+    let sec = Math.floor(video.currentTime%60);
+    if(sec < 10){
+        sec = '0' + sec;
+    }
+    time.innerText = `${min}:${sec}`
+}
+function changingRange(){
+    video.currentTime = (+range.value * video.duration) /100
 }
 // event listners
 video.addEventListener('click', playAndStop);
 play.firstElementChild.addEventListener('click', playAndStop);
 stop.firstElementChild.addEventListener('click', stopAndBegin);
 range.addEventListener('change', changingRange);
+video.addEventListener('timeupdate', goRange);
