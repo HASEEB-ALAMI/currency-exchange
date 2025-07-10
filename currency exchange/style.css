@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+}
+h3{
+    color: #247aca;
+}
+select{
+    border: none;
+}
+input{
+    border: none;
+    text-align: right;
+    
+}
+.currency1{
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 2px;
+    background-color: transparent;
+}
+.currency2{
+    border-style: solid;
+    background-color: transparent;
+    border-width: 2px;
+    border-radius: 5px;
+}
+.arw{
+    text-align: center;
+    height: 20px;
+}
+.swap{
+    background-color: #247aca;
+    color: #ffffff;
+}
